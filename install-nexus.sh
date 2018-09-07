@@ -11,8 +11,12 @@ install_jdk(){
         java -version
 
         if [ $? -ne 0 ];then
-                wget http://developer1.bj.bcebos.com/linux/java/jdk-8u181-linux-x64.tar.gz
-                wait
+		ls jdk-8u181-linux-x64.tar.gz &>/dev/null
+                if [ $? -ne 0 ];then
+                        wget http://developer1.bj.bcebos.com/linux/java/jdk-8u181-linux-x64.tar.gz
+                        wait
+                fi
+
                 ls jdk-8u181-linux-x64.tar.gz &>/dev/null
 
                 if [ $? -ne 0 ];then
@@ -44,8 +48,12 @@ install_nexus(){
 
 	if [ $? -ne 0 ];then
 
-		wget http://developer1.bj.bcebos.com/linux/nexus/nexus-3.13.0-01-unix.tar.gz
-		wait
+		ls nexus-3.13.0-01-unix.tar.gz &>/dev/null
+                if [ $? -ne 0 ];then
+                        wget http://developer1.bj.bcebos.com/linux/nexus/nexus-3.13.0-01-unix.tar.gz
+                        wait
+                fi
+
 		ls nexus-3.13.0-01-unix.tar.gz
 		if [ $? -ne 0 ];then
 			echo " nexus download is filed, please  retry! "
