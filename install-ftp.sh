@@ -27,3 +27,5 @@ install_ftp(){
 	echo "baidu@123" |passwd --stdin baidu
 	netstat -antup | grep ftp
 }
+
+install_ftp
