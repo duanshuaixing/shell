@@ -44,7 +44,8 @@ install_jenkins(){
 	systemctl daemon-reload
 	systemctl start jenkins && /sbin/chkconfig jenkins on
 	
-	key=`cat  /var/lib/jenkins/secrets/initialAdminPassword`
+	wait
+	key=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 	echo "=================================================="
 	echo ""
 	echo $key
