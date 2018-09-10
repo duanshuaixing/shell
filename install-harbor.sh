@@ -32,6 +32,8 @@ install_docker-compose(){
 install_https(){
 	#https://github.com/goharbor/harbor/blob/master/docs/configure_https.md
 	wget https://storage.googleapis.com/harbor-releases/harbor-offline-installer-v1.5.2.tgz
+	#backup
+	#http://developer1.bj.bcebos.com/linux/harbor/harbor-offline-installer-v1.5.2.tgz
 	tar -xf harbor-offline-installer-v1.5.2.tgz
 	mkdir -p harbor/ssl && cd harbor/ssl
 	read -p "Please input your domainname:" domain
